@@ -1,0 +1,50 @@
+package Personagens;
+
+public class Inimigo {
+    public static final int VIDA_MAX = 80;
+    private String nome;
+    private int vida;
+    private int ataque;
+    private int defesa;
+    private static Inimigo inimigo;
+
+    private Inimigo(String nome)
+    {
+        this.nome = nome;
+        this.vida = VIDA_MAX;
+        this.ataque = 19;
+        this.defesa = 10;
+    }
+
+    public static Inimigo getInstanciaInimigo(String nome){
+        if(inimigo == null)
+        {
+            inimigo = new Inimigo(nome);
+        }
+        return inimigo;
+    }
+
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void levarDano(int dano) {
+        this.vida -= dano;
+    }
+
+    public String getNome()
+    {
+        return nome;
+    }
+
+    public void setVida(int vida) {this.vida = vida;}
+    public int getAtaque() {return ataque;}
+
+    public void setAtaque(int ataque) {this.ataque = ataque;}
+
+    public int getDefesa() {return defesa;}
+
+    public void setDefesa(int defesa) {this.defesa = defesa;}
+}
+
